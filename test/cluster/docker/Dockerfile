@@ -7,8 +7,8 @@ RUN touch /etc/apt/apt.conf.d/99verify-peer.conf \
   && echo >>/etc/apt/apt.conf.d/99verify-peer.conf "Acquire { https::Verify-Peer false }"
 RUN echo insecure >> $HOME/.curlrc
 
-RUN curl --insecure -fsSL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
+# RUN curl --insecure -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs-current
 RUN apt-get clean
 RUN mkdir /code
 WORKDIR /code
